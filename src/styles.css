@@ -1,0 +1,230 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --paper-bg: #f8f3e8;
+    --paper-sheet: #fdfbf6;
+    --paper-line: rgba(25, 21, 16, 0.08);
+    --ink: #2a251d;
+    --ink-soft: #6b6153;
+  }
+
+  [data-theme='sepya'] {
+    --paper-bg: #efe3cd;
+    --paper-sheet: #f7ecd8;
+    --ink: #3b2f1e;
+    --ink-soft: #7a6647;
+  }
+
+  [data-theme='gece'] {
+    --paper-bg: #15140f;
+    --paper-sheet: #211f19;
+    --paper-line: rgba(255, 255, 255, 0.08);
+    --ink: #e9e2d2;
+    --ink-soft: #a89e8a;
+  }
+
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+
+  body {
+    margin: 0;
+    background: var(--paper-bg);
+    color: var(--ink);
+    font-family: 'Inter', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background: rgba(185, 79, 51, 0.22);
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgba(25, 21, 16, 0.18);
+    border-radius: 99px;
+    border: 3px solid transparent;
+    background-clip: content-box;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(25, 21, 16, 0.3);
+    background-clip: content-box;
+  }
+}
+
+@layer components {
+  /* ---------------------------------------------------------- yüzeyler */
+  .paper-grain {
+    background-image:
+      radial-gradient(circle at 20% 15%, rgba(179, 154, 106, 0.06), transparent 45%),
+      radial-gradient(circle at 80% 70%, rgba(179, 154, 106, 0.05), transparent 40%),
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160' viewBox='0 0 160 160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+  }
+
+  .panel {
+    @apply rounded-2xl border border-ink-800/10 bg-paper-50/80 backdrop-blur-sm;
+    box-shadow:
+      0 1px 0 rgba(255, 255, 255, 0.7) inset,
+      0 10px 30px -22px rgba(25, 21, 16, 0.55);
+  }
+
+  .btn {
+    @apply inline-flex select-none items-center justify-center gap-2 rounded-xl px-3.5 py-2 text-sm font-medium
+           transition-all duration-150 active:scale-[.97] disabled:pointer-events-none disabled:opacity-45;
+  }
+  .btn-primary {
+    @apply btn bg-brand-600 text-paper-50 shadow-sm hover:bg-brand-700;
+  }
+  .btn-ghost {
+    @apply btn border border-ink-800/10 bg-paper-50/60 text-ink-800 hover:border-ink-800/25 hover:bg-paper-100;
+  }
+  .btn-quiet {
+    @apply btn text-ink-600 hover:bg-ink-800/5;
+  }
+  .btn-icon {
+    @apply inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-xl text-ink-600
+           transition-colors hover:bg-ink-800/8 hover:text-ink-900 active:scale-95;
+  }
+
+  .chip {
+    @apply inline-flex items-center gap-1.5 rounded-full border border-ink-800/12 bg-paper-50/70
+           px-2.5 py-1 text-[11px] font-medium tracking-wide text-ink-600;
+  }
+
+  .field {
+    @apply w-full rounded-xl border border-ink-800/15 bg-paper-50/90 px-3.5 py-2.5 text-sm text-ink-900
+           outline-none transition placeholder:text-ink-400/70
+           focus:border-brand-400 focus:ring-4 focus:ring-brand-500/12;
+  }
+
+  .label {
+    @apply mb-1.5 block text-[11px] font-semibold uppercase tracking-[0.14em] text-ink-400;
+  }
+
+  .divider {
+    @apply h-px w-full bg-gradient-to-r from-transparent via-ink-800/12 to-transparent;
+  }
+
+  /* -------------------------------------------------------- kitap sayfası */
+  .book-sheet {
+    background-color: var(--paper-sheet);
+    box-shadow:
+      0 0 0 1px rgba(25, 21, 16, 0.07),
+      0 2px 4px rgba(25, 21, 16, 0.04),
+      0 30px 60px -40px rgba(25, 21, 16, 0.55);
+  }
+
+  .book-sheet::before {
+    content: '';
+    position: absolute;
+    inset: 0 auto 0 0;
+    width: 26px;
+    background: linear-gradient(
+      to right,
+      rgba(25, 21, 16, 0.1),
+      rgba(25, 21, 16, 0.035) 35%,
+      transparent 78%
+    );
+    pointer-events: none;
+    border-radius: 14px 0 0 14px;
+  }
+
+  .prose-book {
+    color: var(--ink);
+  }
+  .prose-book p {
+    @apply leading-[1.85];
+  }
+
+  /* --------------------------------------------------------- işaretleme */
+  mark.hl {
+    background: transparent;
+    color: inherit;
+    padding: 0.05em 0;
+    border-radius: 2px;
+    transition: filter 0.15s;
+  }
+  mark.hl[data-style='highlight'] {
+    background-image: linear-gradient(
+      to bottom,
+      transparent 8%,
+      var(--hl) 8%,
+      var(--hl) 92%,
+      transparent 92%
+    );
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+  }
+  mark.hl[data-style='underline'] {
+    background-image: linear-gradient(to bottom, transparent 92%, var(--hl) 92%);
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+  }
+  mark.hl[data-style='strike'] {
+    background-image: linear-gradient(to bottom, transparent 52%, var(--hl) 52%, var(--hl) 62%, transparent 62%);
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+  }
+  mark.hl[data-has-note='1'] {
+    border-bottom: 2px dotted rgba(25, 21, 16, 0.4);
+  }
+  .erasing mark.hl:hover {
+    filter: saturate(0.2) opacity(0.45);
+    cursor: crosshair;
+  }
+
+  /* --------------------------------------------------------- not defteri */
+  .notebook-lines {
+    background-image: repeating-linear-gradient(
+      to bottom,
+      transparent,
+      transparent 27px,
+      rgba(70, 120, 160, 0.16) 27px,
+      rgba(70, 120, 160, 0.16) 28px
+    );
+    background-position: 0 6px;
+  }
+
+  .handwriting {
+    font-family: 'Caveat', cursive;
+    font-size: 1.28rem;
+    line-height: 28px;
+  }
+
+  /* ------------------------------------------------------------ yardımcı */
+  .scroll-thin {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(25, 21, 16, 0.22) transparent;
+  }
+
+  .no-select {
+    user-select: none;
+    -webkit-user-select: none;
+  }
+
+  .tabular {
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+@layer utilities {
+  .animate-none-important {
+    animation: none !important;
+  }
+}

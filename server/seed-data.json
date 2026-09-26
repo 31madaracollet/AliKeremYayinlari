@@ -1,0 +1,104 @@
+{
+  "marks": [
+    {
+      "bookId": "turkce-8",
+      "pageId": "tur-u1-p1",
+      "anchorId": "b1",
+      "start": 54,
+      "end": 127,
+      "quote": "Aynı kelime, içinde bulunduğu cümleye göre bambaşka bir anlam kazanabilir",
+      "style": "highlight",
+      "color": "sari",
+      "note": ""
+    },
+    {
+      "bookId": "turkce-8",
+      "pageId": "tur-u1-p1",
+      "anchorId": "b7",
+      "start": 9,
+      "end": 46,
+      "quote": "gerçek anlamından tamamen uzaklaşarak",
+      "style": "highlight",
+      "color": "yesil",
+      "note": "Mecazın tanımı bu cümlede."
+    },
+    {
+      "bookId": "turkce-8",
+      "pageId": "tur-u1-p1",
+      "anchorId": "b5",
+      "start": 55,
+      "end": 86,
+      "quote": "biçim ya da işlev benzerliğiyle",
+      "style": "underline",
+      "color": "mavi",
+      "note": ""
+    },
+    {
+      "bookId": "turkce-8",
+      "pageId": "tur-u1-p1",
+      "anchorId": "b11",
+      "start": 133,
+      "end": 189,
+      "quote": "Kurulabiliyorsa yan anlam, kurulamıyorsa mecaz anlamdır.",
+      "style": "highlight",
+      "color": "pembe",
+      "note": "Sınavda bunu sor kendine!"
+    },
+    {
+      "bookId": "matematik-8",
+      "pageId": "mat-u1-p1",
+      "anchorId": "b2",
+      "start": 102,
+      "end": 119,
+      "quote": "(x+1)·(y+1)·(z+1)",
+      "style": "highlight",
+      "color": "turuncu",
+      "note": "Bölen sayısı formülü"
+    },
+    {
+      "bookId": "fen-8",
+      "pageId": "fen-u1-p1",
+      "anchorId": "b1",
+      "start": 207,
+      "end": 269,
+      "quote": "Dünya’nın dönme ekseninin yörünge düzlemine 23°27′ eğik olması",
+      "style": "highlight",
+      "color": "sari",
+      "note": "Mevsimlerin TEK sebebi."
+    }
+  ],
+  "notes": [
+    {
+      "bookId": "turkce-8",
+      "pageId": "tur-u1-p1",
+      "pageLabel": "s.1 · Sözcükte Anlam",
+      "color": "sari",
+      "pinned": 1,
+      "body": "Yan anlam mı mecaz mı?\n→ Benzerlik kurabiliyorsam YAN ANLAM\n→ Kuramıyorsam MECAZ\n\nÖrnek: şişenin ağzı = yan (biçim benzerliği)\n“ağzı laf yapıyor” = mecaz"
+    },
+    {
+      "bookId": "turkce-8",
+      "pageId": "tur-u1-p3",
+      "pageLabel": "s.3 · Cümlede Anlam",
+      "color": "yesil",
+      "pinned": 0,
+      "body": "Neden–sonuç: iş OLMUŞ\nAmaç–sonuç: niyet var, olmamış olabilir\n\n“Yorulduğu için oturdu” → neden\n“Dinlenmek için oturdu” → amaç"
+    },
+    {
+      "bookId": "matematik-8",
+      "pageId": "mat-u1-p1",
+      "pageLabel": "s.1 · Çarpanlar ve Katlar",
+      "color": "mavi",
+      "pinned": 0,
+      "body": "a · b = EBOB · EKOK\nBu formülü unutma, çok soru çıkıyor.\n\nEBOB → parçalara ayırma\nEKOK → birlikte buluşma"
+    },
+    {
+      "bookId": "fen-8",
+      "pageId": "fen-u1-p1",
+      "pageLabel": "s.1 · Mevsimlerin Oluşumu",
+      "color": "pembe",
+      "pinned": 0,
+      "body": "DİKKAT: Mevsimler uzaklıktan DEĞİL, eksen eğikliğinden!\nOcak’ta Güneş’e en yakınız ama kış."
+    }
+  ]
+}

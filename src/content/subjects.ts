@@ -1,0 +1,66 @@
+import type { Subject } from './types'
+
+export const SUBJECTS: Subject[] = [
+  {
+    id: 'turkce',
+    name: 'Türkçe',
+    short: 'TÜR',
+    lgsQuestions: 20,
+    color: '#b94f33',
+    accent: '#f2c2b4',
+    icon: '✒︎',
+    description: 'Sözcükten paragrafa, fiilimsiden anlatım bozukluğuna kadar sözel mantığın tamamı.',
+  },
+  {
+    id: 'matematik',
+    name: 'Matematik',
+    short: 'MAT',
+    lgsQuestions: 20,
+    color: '#1f4e79',
+    accent: '#bcd3e8',
+    icon: '∑',
+    description: 'Çarpanlardan özdeşliklere, üçgenlerden dönüşüm geometrisine yeni nesil kurgu.',
+  },
+  {
+    id: 'fen',
+    name: 'Fen Bilimleri',
+    short: 'FEN',
+    lgsQuestions: 20,
+    color: '#3a7150',
+    accent: '#c3dfcd',
+    icon: '⚛',
+    description: 'Mevsimlerden DNA’ya, basınçtan basit makinelere deney temelli anlatım.',
+  },
+  {
+    id: 'inkilap',
+    name: 'T.C. İnkılap Tarihi',
+    short: 'İNK',
+    lgsQuestions: 10,
+    color: '#8a2f36',
+    accent: '#edc6c6',
+    icon: '⚑',
+    description: 'Bir kahramanın doğuşundan çağdaş Türkiye’ye uzanan kronolojik yolculuk.',
+  },
+  {
+    id: 'din',
+    name: 'Din Kültürü ve Ahlak Bilgisi',
+    short: 'DİN',
+    lgsQuestions: 10,
+    color: '#6b5335',
+    accent: '#e4d7bd',
+    icon: '☾',
+    description: 'Kader ve kaza, zekât ve sadaka, Hz. Muhammed’in örnekliği ve Kur’an bilgisi.',
+  },
+  {
+    id: 'ingilizce',
+    name: 'İngilizce',
+    short: 'ENG',
+    lgsQuestions: 10,
+    color: '#4a3b7a',
+    accent: '#d3cbe9',
+    icon: '☉',
+    description: 'Friendship’ten Natural Forces’a 10 ünite: kalıp, diyalog ve kelime çalışması.',
+  },
+]
+
+export const subjectById = (id: string) => SUBJECTS.find((s) => s.id === id)
